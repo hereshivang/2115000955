@@ -10,7 +10,7 @@ const ProductPage = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       const response = await axios.get(`http://20.244.56.144/test/companies/AMZ/categories/Laptop/products`);
-      const productDetails = response.data.find(p => p.productName === id); // Adjust based on unique identifier
+      const productDetails = response.data.find(p => p.productName === id);
       setProduct(productDetails);
     };
 

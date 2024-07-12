@@ -17,10 +17,10 @@ app.get('/numbers/:type', async (req, res) => {
 
   const numbers = await fetchNumbers(type);
 
-  // Ensure stored numbers are unique
+
   storedNumbers = [...new Set([...storedNumbers, ...numbers])];
 
-  // Limit stored numbers to the window size
+
   if (storedNumbers.length > WINDOW_SIZE) {
     storedNumbers = storedNumbers.slice(-WINDOW_SIZE);
   }
@@ -36,5 +36,5 @@ app.get('/numbers/:type', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on ${PORT}`);
 });
